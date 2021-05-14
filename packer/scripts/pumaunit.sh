@@ -9,14 +9,13 @@ After=network.target
 Type=simple
 
 User=root
-Group=root
+
+WorkingDirectory=/home/root/reddit
 
 ExecStart=/usr/local/bin/puma -d
 
-#Restart=always
-Restart=on-failure
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
 EOF
-
