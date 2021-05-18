@@ -1,6 +1,6 @@
 project = "infra-313311"
 
-public_key_path = "/root/.ssh/terr.pub"
+public_key_path = "/root/.ssh/id_rsa.pub"
 
 disk_image = "test1"
 

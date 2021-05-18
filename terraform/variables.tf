@@ -14,11 +14,11 @@ variable "public_key_path" {
 variable "disk_image" {
   description = "Disk image"
 }
-variable ruby_disk_image {
-description = "disk for ruby server"
-default = "reddit-app-base"
+variable "ruby_disk_image" {
+  description = "disk for ruby server"
+  default     = "reddit-app-base"
 }
-variable db_disk_image {
-description = "disk for mongodb server"
-default = "reddit-db-base"
+variable "db_disk_image" {
+  description = "disk for mongodb server"
+  default     = "reddit-db-base"
 }
