@@ -1,0 +1,11 @@
+---
+# tasks file for db
+- name: info about env
+  debug:
+    msg: "It is {{ env }} environmet"
+- name: change mongo conf 
+  template:
+    src: mongod.conf.j2
+    dest: /etc/mongod.conf
+    mode: 0644
+  notify: restart mongod

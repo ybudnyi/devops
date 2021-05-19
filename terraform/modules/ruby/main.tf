@@ -15,8 +15,8 @@ resource "google_compute_instance" "ruby" {
   network_interface {
     network = "default"
     access_config {
-	nat_ip = "${google_compute_address.ruby_ip.address}"
-}
+      nat_ip = google_compute_address.ruby_ip.address
+    }
   }
 }
 
@@ -31,5 +31,5 @@ resource "google_compute_firewall" "firewall_puma" {
   target_tags   = ["reddit-app"]
 }
 resource "google_compute_address" "ruby_ip" {
-name = "ruby-ip"
+  name = "ruby-ip"
 }

@@ -6,16 +6,16 @@ provider "google" {
   region = var.region
 }
 module "ruby" {
-source = "./modules/ruby"
-public_key_path = "${var.public_key_path}"
-ruby_disk_image = "${var.ruby_disk_image}"
+  source          = "./modules/ruby"
+  public_key_path = var.public_key_path
+  ruby_disk_image = var.ruby_disk_image
 }
 module "db" {
-source = "./modules/db"
-public_key_path = "${var.public_key_path}"
-db_disk_image = "${var.db_disk_image}"
+  source          = "./modules/db"
+  public_key_path = var.public_key_path
+  db_disk_image   = var.db_disk_image
 }
 module "vpc" {
-source = "./modules/vpc"
+  source = "./modules/vpc"
 }
 

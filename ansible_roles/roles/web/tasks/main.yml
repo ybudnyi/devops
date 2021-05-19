@@ -1,0 +1,18 @@
+---
+# tasks file for web
+- name: env info
+  debug:
+    msg: "It is {{ env }} environment"
+- name: 
+  copy:
+    src: puma.service
+    dest: /etc/systemd/system/puma.service
+  notify: reload puma
+- name: add conf for db conection
+  template:
+    src: templates/db_config.j2
+    dest: /home/ybudnyi/db_config
+    owner: ybudnyi
+    group: ybudnyi
+- name: enable puma
+  systemd: name=puma enabled=yes

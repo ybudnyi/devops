@@ -1,0 +1,9 @@
+---
+- name: Configure ruby server 
+  hosts: app
+  become: true
+  vars:
+    db_host: 10.132.0.44
+  roles:
+    - web
+    - jdauphant.nginx
