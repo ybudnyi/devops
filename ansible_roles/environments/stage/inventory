@@ -1,0 +1,4 @@
+[app]
+ruby ansible_host=34.118.20.76
+[db]
+mongo ansible_host=35.205.133.214
